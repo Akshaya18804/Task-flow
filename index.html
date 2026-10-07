@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TaskFlow – Student Task Management System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LANDING -->
+<section class="view" id="v-landing">
+  <header class="nav"><div class="wrap nav-in">
+    <a href="#/" class="logo"><span class="logo-i">✓</span>TaskFlow</a>
+    <div class="nav-links"><a href="#features">Features</a><a href="#workflow">How it works</a><a class="btn ghost" href="#/login">Login</a><a class="btn" href="#/register">Get Started</a></div>
+  </div></header>
+  <div class="hero"><div class="wrap">
+    <span class="pill">🎓 Built for students</span>
+    <h1>Manage Your Tasks.<br><span class="grad">Achieve More.</span></h1>
+    <p class="lead">TaskFlow helps students organize assignments, deadlines, and daily goals in one simple workspace.</p>
+    <div class="row center"><a class="btn lg" href="#/register">Get Started</a><a class="btn ghost lg" href="#/login">Login</a></div>
+  </div></div>
+  <div class="wrap stats-band">
+    <div><b>10k+</b><span>Tasks organized</span></div><div><b>95%</b><span>On-time submissions</span></div><div><b>2 min</b><span>To get started</span></div><div><b>24/7</b><span>Access anywhere</span></div>
+  </div>
+  <div class="wrap section" id="features">
+    <h2>Everything you need to stay on track</h2>
+    <div class="grid3">
+      <div class="card feat"><span class="ic">📝</span><h3>Task Management</h3><p>Add, edit, delete and complete tasks with categories and notes.</p></div>
+      <div class="card feat"><span class="ic">🚦</span><h3>Priorities</h3><p>Mark tasks High, Medium or Low so you focus on what matters.</p></div>
+      <div class="card feat"><span class="ic">⏰</span><h3>Due Dates</h3><p>Never miss a deadline – overdue tasks are highlighted automatically.</p></div>
+      <div class="card feat"><span class="ic">🔍</span><h3>Search &amp; Filter</h3><p>Find any task instantly by keyword, status or priority.</p></div>
+      <div class="card feat"><span class="ic">📊</span><h3>Statistics</h3><p>See total, completed, pending and overdue tasks at a glance.</p></div>
+      <div class="card feat"><span class="ic">📱</span><h3>Fully Responsive</h3><p>Works smoothly on desktop, tablet and mobile.</p></div>
+    </div>
+  </div>
+  <div class="wrap section" id="workflow">
+    <h2>Simple workflow</h2>
+    <div class="grid3">
+      <div class="step"><i>1</i><h3>Create account</h3><p>Sign up in seconds.</p></div>
+      <div class="step"><i>2</i><h3>Add your tasks</h3><p>Set priority and due date.</p></div>
+      <div class="step"><i>3</i><h3>Track progress</h3><p>Tick them off and watch stats grow.</p></div>
+    </div>
+  </div>
+  <div class="wrap"><div class="cta"><h2>Ready to get organized?</h2><p>Join TaskFlow and take control of your semester.</p><a class="btn white lg" href="#/register">Create free account</a></div></div>
+  <footer class="foot"><div class="wrap">© 2026 TaskFlow – Student Task Management System · College DevOps Project</div></footer>
+</section>
+
+<!-- LOGIN / REGISTER -->
+<section class="view auth" id="v-login">
+  <form class="card auth-card" id="loginForm" novalidate>
+    <a href="#/" class="logo"><span class="logo-i">✓</span>TaskFlow</a>
+    <h2>Welcome back</h2><p class="muted">Log in to your workspace.</p>
+    <div class="alert" id="loginAlert" hidden></div>
+    <label>Email<input type="email" id="lEmail" placeholder="you@college.edu"><small class="err" id="lEmailE"></small></label>
+    <label>Password<div class="pw"><input type="password" id="lPass" placeholder="Your password"><button type="button" class="eye" data-eye="lPass" aria-label="Show password">👁</button></div><small class="err" id="lPassE"></small></label>
+    <div class="between"><label class="chk"><input type="checkbox" id="remember"> Remember me</label><a href="#" id="forgot">Forgot password?</a></div>
+    <button class="btn block">Login</button>
+    <p class="muted center">New here? <a href="#/register">Create an account</a></p>
+  </form>
+</section>
+
+<section class="view auth" id="v-register">
+  <form class="card auth-card" id="regForm" novalidate>
+    <a href="#/" class="logo"><span class="logo-i">✓</span>TaskFlow</a>
+    <h2>Create your account</h2><p class="muted">Start organizing in under two minutes.</p>
+    <div class="alert" id="regAlert" hidden></div>
+    <label>Full Name<input id="rName" placeholder="Your name"><small class="err" id="rNameE"></small></label>
+    <label>Email<input type="email" id="rEmail" placeholder="you@college.edu"><small class="err" id="rEmailE"></small></label>
+    <label>Password<div class="pw"><input type="password" id="rPass" placeholder="Min 8 characters"><button type="button" class="eye" data-eye="rPass" aria-label="Show password">👁</button></div>
+      <div class="meter"><span id="meterBar"></span></div><small id="meterTxt" class="muted">Strength: –</small><small class="err" id="rPassE"></small></label>
+    <label>Confirm Password<input type="password" id="rPass2" placeholder="Repeat password"><small class="err" id="rPass2E"></small></label>
+    <button class="btn block">Create account</button>
+    <p class="muted center">Already registered? <a href="#/login">Login</a></p>
+  </form>
+</section>
+
+<!-- APP -->
+<section class="view" id="v-app">
+  <aside class="side" id="side">
+    <a href="#/dashboard" class="logo"><span class="logo-i">✓</span>TaskFlow</a>
+    <nav>
+      <a href="#/dashboard" data-nav="dashboard">🏠 Dashboard</a>
+      <a href="#/tasks" data-nav="tasks">📋 My Tasks</a>
+      <a href="#/profile" data-nav="profile">👤 Profile</a>
+    </nav>
+    <button class="btn ghost block" id="logoutBtn">Log out</button>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+  <div class="main">
+    <header class="top">
+      <button class="burger" id="burger" aria-label="Menu">☰</button>
+      <input class="search" id="gSearch" placeholder="Search tasks…" aria-label="Search tasks">
+      <div class="user"><span class="avatar" id="avatar">S</span><span id="topName"></span></div>
+    </header>
+
+    <main class="content">
+      <div class="page" id="p-dashboard">
+        <h1 id="greet">Good Morning, Student!</h1><p class="muted">Here's what's happening with your tasks today.</p>
+        <div class="stats" id="stats"></div>
+        <div class="card">
+          <div class="between wrapm"><h2>Today's Tasks</h2><button class="btn" data-add>+ Add Task</button></div>
+          <div id="todayList" class="tlist"></div>
+        </div>
+      </div>
+
+      <div class="page" id="p-tasks">
+        <div class="between wrapm"><div><h1>My Tasks</h1><p class="muted">Search, filter and manage everything.</p></div><button class="btn" data-add>+ Add Task</button></div>
+        <div class="card">
+          <div class="filters">
+            <input id="tSearch" placeholder="Search by title or category…">
+            <select id="fStatus"><option value="all">All status</option><option value="pending">Pending</option><option value="completed">Completed</option><option value="overdue">Overdue</option></select>
+            <select id="fPri"><option value="all">All priority</option><option>High</option><option>Medium</option><option>Low</option></select>
+          </div>
+          <div id="allList" class="tlist"></div>
+        </div>
+      </div>
+
+      <div class="page" id="p-profile">
+        <h1>Profile</h1><p class="muted">Manage your account details.</p>
+        <form class="card narrow" id="profForm" novalidate>
+          <div class="alert ok" id="profAlert" hidden></div>
+          <label>Full Name<input id="pName"></label>
+          <label>Email<input id="pEmail" disabled></label>
+          <label>New Password (optional)<input type="password" id="pPass" placeholder="Leave blank to keep current"></label>
+          <button class="btn">Save changes</button>
+        </form>
+      </div>
+    </main>
+  </div>
+</section>
+
+<!-- TASK MODAL -->
+<div class="modal" id="modal" hidden>
+  <form class="card modal-box" id="taskForm" novalidate>
+    <h2 id="mTitle">Add Task</h2>
+    <input type="hidden" id="tId">
+    <label>Title<input id="tTitle" placeholder="e.g. Submit DevOps report"><small class="err" id="tTitleE"></small></label>
+    <div class="two">
+      <label>Category<select id="tCat"><option>Assignment</option><option>Exam</option><option>Project</option><option>Personal</option></select></label>
+      <label>Priority<select id="tPri"><option>High</option><option selected>Medium</option><option>Low</option></select></label>
+    </div>
+    <label>Due date<input type="date" id="tDue"><small class="err" id="tDueE"></small></label>
+    <div class="row end"><button type="button" class="btn ghost" id="mCancel">Cancel</button><button class="btn">Save Task</button></div>
+  </form>
+</div>
+
+<div class="toast" id="toast" hidden></div>
+<script src="script.js"></script>
+</body>
+</html>
